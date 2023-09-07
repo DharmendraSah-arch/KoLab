@@ -1,2 +1,2 @@
 # KoLab
-I developed this KoLab web site in .NET Core and Angular
+I developed this KoLab web site in Angular 16 and .NET 6.
