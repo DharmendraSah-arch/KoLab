@@ -1,11 +1,45 @@
+<header data-bs-theme="dark">
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <div class="container-fluid">
+        <span><img src="assets/images/logo/abc.png" alt="" width="150"></span>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" [routerLink]="['/']">Home</a>
+              </li>
+            <li><a href="#" class="nav-link px-2 text-white">Features</a></li>
+            <li><a href="#" class="nav-link px-2 text-white">Pricing</a></li>
+            <li><a href="#" class="nav-link px-2 text-white">FAQs</a></li>
+            <li><a href="#" class="nav-link px-2 text-white">About</a></li>
+            <li>
+              <!-- <a href="#" class="nav-link px-2 text-white">Book an appointment</a>   -->
+               <button type="button" class="btn btn-outline-primary">Book an appointment</button></li>
+            <!-- <li class="nav-item">
+                <div class="col-md-7 col-lg-7 col-sm-8 col-xs-8 vis-md">
+                  <a [routerLink]="['/Test']" class="btn btn-warning scanstestsbtn text-white mr-1">Book an appointment</a>                
+             </div>             
+            </li> -->
+          </ul>
+    
+        <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
+            <input type="search" class="form-control form-control-dark text-bg-dark" placeholder="Search..." aria-label="Search">
+          </form>
+  
+          <div class="text-end">
+            <button type="button" class="btn btn-outline-light me-2" [routerLink]="['/authentication/login']">Login</button>
+            <button type="button" class="btn btn-warning" [routerLink]="['/authentication/register']">Sign-up</button>
+          </div>
+      </div>
+    </div>
+    </nav>
+    </header>
 
-
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
+<!-- <nav class="navbar navbar-expand-lg bg-body-tertiary">
 
     <div class="container-fluid">
   
       <span><img src="assets/images/logo/abc.png" alt="" width="150"></span>
-      <!-- <a class="navbar-brand" href="#">KoLabi</a> -->
+      
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -16,6 +50,16 @@
           </li>
           <li class="nav-item">
             <a class="nav-link"  [routerLink]="['/Health-Packages']">Health Package</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" [routerLink]="['/Health-Packages']" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Health Package
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">OUR LABS</a></li>
+              <li><a class="dropdown-item" href="#">YOUR HOME</a></li>
+           
+            </ul>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -29,7 +73,12 @@
             </ul>
           </li>
           <li class="nav-item">
-            <a class="nav-link" [routerLink]="['/Test']">Test</a>
+            <div class="col-md-7 col-lg-7 col-sm-8 col-xs-8 vis-md">
+              <a [routerLink]="['/Test']" class="btn btn-warning scanstestsbtn text-white mr-1">Book an appointment</a>
+             
+         </div>
+          
+           
           </li>
         </ul>
         <form class="d-flex" role="search">
@@ -42,6 +91,6 @@
         <button type="button" class="btn btn-outline-primary" [routerLink]="['/authentication/register']">Sign up</button>
       </div>
     </div>
-  </nav>
+  </nav> -->
 
 

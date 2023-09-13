@@ -1,0 +1,16 @@
+.btn-warning {
+    background-color: #F1A848 !important;
+    border-color: #F1A848 !important;
+}
+@media (min-width: 768px){
+.vis-md {
+    display: flex;
+}}
+@media (min-width: 992px)
+{
+.col-lg-7 {
+    -ms-flex: 0 0 58.333333%;
+    flex: 0 0 58.333333%;
+    max-width: 58.333333%;
+}
+}

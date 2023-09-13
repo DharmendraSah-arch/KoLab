@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { NgToastService } from 'ng-angular-popup';
 import validateAllForm from 'src/core/helpers/vaidateForm';
 import { AuthService } from 'src/core/services/auth.service';
+import { ResetPasswordService } from 'src/core/services/reset-password.service';
 import { UserStoreService } from 'src/core/services/user-store.service';
 
 @Component({
@@ -24,7 +25,8 @@ public loginForm!:FormGroup;
     private auth: AuthService,
     private router: Router,
     private toast: NgToastService,
-    private userStore:UserStoreService
+    private userStore:UserStoreService,
+    private resetService:ResetPasswordService
      ){}
   ngOnInit(): void{
 
@@ -43,8 +45,7 @@ password:['',Validators.required]
 
   onSubmit(){
   if(this.loginForm.valid)
-  {
-     console.log(this.loginForm.value);
+  {  console.log(this.loginForm.value);
     // Send the object to database
      this.auth.signIn(this.loginForm.value).subscribe({
      next:(res)=>{
@@ -78,8 +79,19 @@ password:['',Validators.required]
   confirmTosend(){
     if(this.checkValidEmail(this.resetPasswordEmail)){
     console.log(this.resetPasswordEmail);
-    const buttonRef= document.getElementById("closeBtn");
-    buttonRef?.click();
+    //Api call first
+    this.resetService.sendResetPasswordLink(this.resetPasswordEmail).subscribe({
+      next:(res)=>{
+     
+      this.toast.success({detail:"Success", summary:'Reset Sucess!', duration:5000});
+      this.resetPasswordEmail="";
+      const buttonRef= document.getElementById("closeBtn");
+      buttonRef?.click();
+      },
+      error:(err)=>{
+       this.toast.error({detail:"ERROR", summary:"Something when wrong!", duration: 5000});
+      }
+    })
     }
   }
 }
