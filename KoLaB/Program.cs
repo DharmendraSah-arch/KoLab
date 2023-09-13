@@ -3,6 +3,7 @@ using KoLaB.Context;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using KoLaB.UtlityService;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -24,7 +25,7 @@ option.AddPolicy("MyPolicy",builder=>
         
     });
 });
-
+builder.Services.AddScoped<IEmailService, EmailService>();
 builder.Services.AddAuthentication(x =>
 {
     x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
