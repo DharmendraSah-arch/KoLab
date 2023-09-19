@@ -158,12 +158,7 @@ namespace KoLaB.Controllers
                 throw new SecurityTokenException("This is Invalid Token");
             return principal;
         }
-        [Authorize]
-        [HttpGet]
-        public async Task<ActionResult<User>> GetAllUser()
-        {
-            return Ok(await _authContext.Users.ToListAsync());
-        }
+   
 
         [HttpPost("refresh")]
         public async Task<IActionResult> Refresh([FromBody] TokenApiDto tokenApiDto)

@@ -28,8 +28,8 @@ public loginForm!:FormGroup;
     private userStore:UserStoreService,
     private resetService:ResetPasswordService
      ){}
-  ngOnInit(): void{
 
+ngOnInit(): void{
 this.loginForm=this.fb.group({
 username:['',Validators.required],
 password:['',Validators.required]
@@ -70,12 +70,14 @@ password:['',Validators.required]
   validateAllForm.validateAllFormFileds(this.loginForm);
   }
   }
+
   checkValidEmail(event:string){
     const value=event;
     const pattern=/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
     this.isValidEmail= pattern.test(value);
     return this.isValidEmail;
   }
+
   confirmTosend(){
     if(this.checkValidEmail(this.resetPasswordEmail)){
     console.log(this.resetPasswordEmail);
